@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .sliderbar{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        z-index: auto;
+        text-align: center;
+        line-height: 100px;
+        padding-left: 200px;
+        
+    }
+    .con{
+
+        position: absolute;
+        left: 300px;
+        top:0;
+        width: 200px;
+        height: 100px;
+        background-color: green;
+        z-index: -1;
+        text-align: left;
+    }
+</style>
+<script src="anim.js"></script>
+<body>
+    <div class="sliderbar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+       var sliderbar=document.querySelector('.sliderbar');
+        var con=document.querySelector('.con');
+        var span=document.querySelector('span');
+        sliderbar.addEventListener('mouseenter',function(){
+           animate(con,-0,function(){span.innerHTML='→'})
+           
+        })
+        
+
+        sliderbar.addEventListener('mouseleave',function(){
+           animate(con,300,function(){span.innerHTML='←'})
+        })
+    </script>
+</body>
+</html>
