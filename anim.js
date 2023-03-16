@@ -2,12 +2,13 @@ function animate(obj,tar,fun){
     //执行前先停止定时器，防止冲突
   
     clearInterval(obj.timer);
-    
+  
     obj.timer=setInterval(function(){
         //算法，让盒子每次移动的值变小
     var s=(tar-obj.offsetLeft)/20;
     //因为s=0.1的时候默认是0了，就不移动了，所以设置0.1的时候是1，-0.1的时候是-1
     if(s>0){
+log();
        s= Math.ceil(s)
     }else{
         s= Math.floor(s)
